@@ -15,7 +15,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import algo.Greedy;
-import algo.RecuitSimule;
 
 
 public class AfficheTSP extends JPanel {
@@ -28,7 +27,7 @@ public class AfficheTSP extends JPanel {
 
 	// lien vers les algorithmes
 	AlgorithmeAbstract greedy;
-	RecuitSimule recuitSimule;
+	//RecuitSimule recuitSimule;
 	AlgorithmeAbstract taboue;
 	AlgorithmeAbstract taboueAttribut;
 
@@ -46,8 +45,8 @@ public class AfficheTSP extends JPanel {
 		panelBoutons.setLayout(new BorderLayout());
 		JButton boutonGreedy = creerBoutonGreedy();
 		panelBoutons.add(boutonGreedy, BorderLayout.NORTH);
-		JButton boutonRecuit = creerBoutonRecuit();
-		panelBoutons.add(boutonRecuit, BorderLayout.CENTER);
+		//JButton boutonRecuit = creerBoutonRecuit();
+		//panelBoutons.add(boutonRecuit, BorderLayout.CENTER);
 		contenu.add(panelBoutons, BorderLayout.SOUTH);
 
 		// construction JFrame
@@ -78,7 +77,7 @@ public class AfficheTSP extends JPanel {
 		return boutonGreedy;
 	}
 
-	private JButton creerBoutonRecuit() {
+	/*private JButton creerBoutonRecuit() {
 		final int nbIteration = 100;
 		String nombouton = "recuit simule (*" + nbIteration + ")";
 		JButton boutonRecuit = new JButton(nombouton);
@@ -99,7 +98,7 @@ public class AfficheTSP extends JPanel {
 			}
 		});
 		return boutonRecuit;
-	}
+	}*/
 
 	@Override
 	public void paint(Graphics g) {

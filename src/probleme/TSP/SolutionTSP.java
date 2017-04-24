@@ -4,6 +4,7 @@ import generic.SolutionAbstract;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * une solution au TSP
@@ -142,8 +143,12 @@ public class SolutionTSP extends  SolutionAbstract{
 	SolutionTSP voisin = new SolutionTSP(this);
 	
 	// TODO a ecrire etudiant
-	
 
+		Random rand = new Random();
+
+		int n = rand.nextInt(50);
+		List<SolutionAbstract> lsa = this.retourneVoisinage();
+		voisin = (SolutionTSP) lsa.get(n);
 
 	// FinTODO a ecrire etudiant
 	return voisin;

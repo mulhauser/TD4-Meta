@@ -1,12 +1,9 @@
 package generic;
 
 
-import probleme.quatreCouleurs.TabouFiltreAttribut;
 import algo.Greedy;
-import algo.RecuitSimule;
-import algo.Tabou;
 import algo.SLS;
-import java.util.Properties;
+
 /**
  * algorithme abstrait se base sur un probleme abstrait et des solutions
  * abstraites à implementer
@@ -64,7 +61,9 @@ public abstract class AlgorithmeAbstract {
 	this.valeurMeilleureSolution = this.valeurSolutionEnCours;
     }
 
-    /**
+
+
+	/**
      * méthode a redefinir
      * 
      * @return booleen pour arreter eventuellement la boucle
@@ -151,11 +150,11 @@ public abstract class AlgorithmeAbstract {
 	switch (nom) {
 	case "greedy":
 	    return new Greedy(probleme, solutionInitiale, maxEvaluations);
-	case "recuit":
+	/*case "recuit":
 	    return new RecuitSimule(probleme, solutionInitiale, 1000, maxEvaluations);
 	case "tabou":
 	    return new Tabou(probleme, solutionInitiale, 
-			     new TabouFiltreAttribut(20), maxEvaluations);
+			     new TabouFiltreAttribut(20), maxEvaluations);*/
 	case "sls":
 	    return new SLS(probleme, solutionInitiale, maxEvaluations);
 	    

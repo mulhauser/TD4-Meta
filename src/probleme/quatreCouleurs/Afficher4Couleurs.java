@@ -16,9 +16,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import algo.Greedy;
-import algo.RecuitSimule;
-import algo.Tabou;
-import algo.TabouFiltreAbstract;
 
 /**
  * permet d'afficher un probleme 4 couleurs
@@ -49,7 +46,7 @@ public class Afficher4Couleurs extends JPanel {
     /**
      * constructeur
      * 
-     * @param pb2
+     * @param probleme
      *            solution associée au probleme
      */
     public Afficher4Couleurs(Probleme4Couleurs probleme,
@@ -67,10 +64,10 @@ public class Afficher4Couleurs extends JPanel {
 	panelBoutons.setLayout(new BorderLayout());
 	JButton boutonGreedy = creerBoutonGreedy();
 	panelBoutons.add(boutonGreedy, BorderLayout.NORTH);
-	JButton boutonRecuit = creerBoutonRecuit();
-	panelBoutons.add(boutonRecuit, BorderLayout.CENTER);
-	JButton boutonTabou = creerBoutonTaboueAttribut();
-	panelBoutons.add(boutonTabou, BorderLayout.SOUTH);
+	//JButton boutonRecuit = creerBoutonRecuit();
+	//panelBoutons.add(boutonRecuit, BorderLayout.CENTER);
+	//JButton boutonTabou = creerBoutonTaboueAttribut();
+	//panelBoutons.add(boutonTabou, BorderLayout.SOUTH);
 	contenu.add(panelBoutons, BorderLayout.SOUTH);
 
 	// construction JFrame
@@ -125,7 +122,7 @@ public class Afficher4Couleurs extends JPanel {
 	    });
     }
 
-    private JButton creerBoutonRecuit() {
+    /*private JButton creerBoutonRecuit() {
 
 	final int nbIteration = 100;
 	JButton boutonRecuit = new JButton("recuit simule (*" + nbIteration
@@ -149,9 +146,9 @@ public class Afficher4Couleurs extends JPanel {
 		}
 	    });
 	return boutonRecuit;
-    }
+    }*/
 
-    private JButton creerBoutonTaboue() {
+    /*private JButton creerBoutonTaboue() {
 	JButton boutonTabou = new JButton("taboue etat");
 	TabouFiltreEtat filtre = new TabouFiltreEtat(1000);
 	this.taboue = new Tabou(problemeAAfficher, solutionCourante, filtre,
@@ -167,9 +164,9 @@ public class Afficher4Couleurs extends JPanel {
 		}
 	    });
 	return boutonTabou;
-    }
+    }*/
 	
-    private JButton creerBoutonTaboueAttribut() {
+    /*private JButton creerBoutonTaboueAttribut() {
 	JButton boutonTabouAttribut = new JButton("taboue attribut");
 	TabouFiltreAbstract filtre = new TabouFiltreAttribut(100);
 	this.taboueAttribut = new Tabou(problemeAAfficher, solutionCourante, 
@@ -185,7 +182,7 @@ public class Afficher4Couleurs extends JPanel {
 		}
 	    });
 	return boutonTabouAttribut;
-    }
+    }*/
 
     private JButton creerBoutonGreedy() {
 	// creation de l'algorithme

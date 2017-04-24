@@ -2,6 +2,7 @@ package probleme.quatreCouleurs;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import generic.SolutionAbstract;
 
@@ -19,7 +20,7 @@ public class Solution4Couleurs extends SolutionAbstract {
     /**
      * construit une solution
      * 
-     * @param pb2
+     * @param pb
      *            probleme associe
      */
     public Solution4Couleurs(Probleme4Couleurs pb) {
@@ -100,8 +101,11 @@ public class Solution4Couleurs extends SolutionAbstract {
 	Solution4Couleurs voisin = new Solution4Couleurs(this);
 
 	// TODO a ecrire etudiant
-	
+	Random rand = new Random();
 
+	int n = rand.nextInt(50);
+	List<SolutionAbstract> lsa = this.retourneVoisinage();
+	voisin = (Solution4Couleurs) lsa.get(n);
 
 	// FinTODO a ecrire etudiant
 
@@ -118,14 +122,37 @@ public class Solution4Couleurs extends SolutionAbstract {
     public SolutionAbstract retournePerturbation(int n){
         Solution4Couleurs perturbed = new Solution4Couleurs(this);
 	
-	
-	// TODO a ecrire etudiant
-	
+        Random rand = new Random();
+        int taille = this.couleurs.length;
+        int randPos = 0;
+        int randColor = 0;
+        int colorEnCours;
+        List<Integer> listColor = new ArrayList<Integer>();
+	    // TODO a ecrire etudiant
+	    for(int i = 0; i < n; i++){
+	        boolean selectRand = false;
+	        while(!selectRand) {
+                randPos = rand.nextInt(taille);
+                if (!listColor.contains(randPos)) {
+                    listColor.add(randPos);
+                    selectRand = true;
+                }
+            }
+            colorEnCours = perturbed.couleurs[randPos];
+            selectRand = false;
+            while(!selectRand){
+                randColor = rand.nextInt(4);
+                if(randColor != colorEnCours){
+                    perturbed.couleurs[randPos] = randColor;
+                    selectRand = true;
+                }
+            }
+        }
 
 
-	// FinTODO a ecrire etudiant
+	    // FinTODO a ecrire etudiant
 	
-	return perturbed;
+	    return perturbed;
     }
 
 	

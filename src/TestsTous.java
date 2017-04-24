@@ -33,7 +33,7 @@ public class TestsTous {
 	TSP probleme         = new TSP(100,400);
 	SolutionTSP solution = new SolutionTSP(probleme);
 		
-	String[] algo={"greedy", "recuit", "sls"};
+	String[] algo={/*"greedy",*/ /*"recuit", */"sls"};
 		
 	//pour chaque algo
 	for (int i=0;i<algo.length;i++){

@@ -4,6 +4,9 @@ import generic.AlgorithmeAbstract;
 import generic.ProblemeAbstract;
 import generic.SolutionAbstract;
 
+import java.util.List;
+import java.util.Random;
+
 
 public class SLS extends AlgorithmeAbstract{
     
@@ -19,9 +22,15 @@ public class SLS extends AlgorithmeAbstract{
 	// TODO a ecrire etudiant
 		
 	// Prend un voisin au hasard et l'evaluer 
+    SolutionAbstract randomSolution = solutionEnCours.retournePerturbation(5);
+    double valRand = problemeATraiter.evaluation(randomSolution);
+    double val = problemeATraiter.evaluation(solutionEnCours);
+    if(valRand < val){
+        solutionEnCours = randomSolution;
+        return true;
+    }
 
-	
-       	// si c'est meilleur, on remplace et retourn vrai 
+       	// si c'est meilleur, on remplace et retourn vrai
 
 
 	// FinTODO a ecrire etudiant
