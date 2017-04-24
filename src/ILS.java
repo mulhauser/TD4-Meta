@@ -53,11 +53,12 @@ public class ILS {
 
             // Executer de l'algorithme
             LS.reset(perturbation);
-            solPrim = LS.getSolutionEnCours();
-            double valPrim = probleme.evaluation(solPrim);
+            LS.executeJusquaFin();
+
             double val = probleme.evaluation(saveSol);
-            if(valPrim < val){
-                saveSol = solPrim;
+            if(LS.valeur() < val){
+                val = LS.valeur();
+                saveSol = LS.getSolutionEnCours();
             }
 
             // Si la solution et meilleure on remplce
